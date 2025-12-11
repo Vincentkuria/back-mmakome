@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: back-mmakome
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: mysecretpassword
+
+jwt:
+  secret: $2y$10$4RZIzjQrySJnObwksm2pQu78DDgb7JokC5MfElF9GWNX7yjhheTm6$2y$10$4RZIzjQrySJnObwksm2pQu78DDgb7JokC5MfElF9GWNX7yjhheTm6
