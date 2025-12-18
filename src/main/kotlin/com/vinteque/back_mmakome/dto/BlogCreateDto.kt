@@ -4,11 +4,11 @@ import org.jetbrains.annotations.NotNull
 import org.springframework.web.multipart.MultipartFile
 
 data class BlogCreateDto(
-    @field:NotNull
-    val image: String,
+    val image: MultipartFile,
     @field:NotNull
     val title: String,
-    val body: MultipartFile,
+    @field:NotNull
+    val body: String,
     @field:NotNull
     val status: String,
 )

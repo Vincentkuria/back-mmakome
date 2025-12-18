@@ -2,6 +2,8 @@ package com.vinteque.back_mmakome.service
 
 import com.vinteque.back_mmakome.model.Message
 import com.vinteque.back_mmakome.repository.MessageRepository
+import org.hibernate.query.SortDirection
+import org.springframework.data.domain.Sort
 import org.springframework.stereotype.Service
 import java.util.Optional
 
@@ -11,7 +13,7 @@ class MessageService(
 ) {
     fun create(message: Message): Message= messageRepository.save(message)
 
-    fun getAll(): List<Message> = messageRepository.findAll()
+    fun getAll(): List<Message> = messageRepository.findAll(Sort.by(Sort.Direction.DESC, "createdAt"))
 
     fun singleMessage(id: Long): Optional<Message?> = messageRepository.findById(id)
 

@@ -19,7 +19,7 @@ class JwtFilter(
 
     override fun shouldNotFilter(request: HttpServletRequest): Boolean {
         print("----- should not filter")
-        val excludedPaths = listOf("/auth/**","/message/create")
+        val excludedPaths = listOf("/auth/**", "/testimonial/all","/message/create", "/blog/single/**", "/case/single/**","/blog/published", "/case/published","/uploads/**")
         val pathMatcher= AntPathMatcher()
         val path = request.servletPath
 

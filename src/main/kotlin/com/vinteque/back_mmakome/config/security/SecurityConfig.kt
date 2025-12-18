@@ -30,7 +30,9 @@ print("------security")
             .csrf { it.disable() }
             .exceptionHandling { it.authenticationEntryPoint(authEntryPoint) }
             .authorizeHttpRequests {
-                it.requestMatchers("/auth/**").permitAll()
+                it.requestMatchers("/auth/**", "/testimonial/all", "/uploads/**","/blog/single/**","/case/single/**").permitAll()
+                    .requestMatchers(HttpMethod.GET, "/blog/published").permitAll()
+                    .requestMatchers(HttpMethod.GET, "/case/published").permitAll()
                     .requestMatchers(HttpMethod.POST,"/message/create").permitAll()
                     .anyRequest().authenticated()
             }
