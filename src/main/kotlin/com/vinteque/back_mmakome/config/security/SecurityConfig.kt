@@ -45,7 +45,7 @@ print("------security")
     @Bean
     fun corsConfigurationSource(): CorsConfigurationSource {
         val config=CorsConfiguration().apply {
-            allowedOrigins=listOf("http://localhost:3000/")
+            allowedOrigins=listOf("http://localhost:3000/","http://mmakome.com", "https://mmakome.com", "http://www.mmakome.com", "https://www.mmakome.com", "http://143.110.170.98")
             allowedMethods=listOf("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD")
             allowedHeaders=listOf("*")
         }
